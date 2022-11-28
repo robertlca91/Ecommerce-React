@@ -15,14 +15,14 @@ const Home = () => {
   const products = useSelector((state) => state.products)
   const [categoryList, setCategoryList] = useState([])
   const [inputSearch, setInputSearch] = useState('')
-
+  const [img, setImg] = useState(null)
   useEffect(() => {
     dispatch(getProductsThunk())
     axios
       .get('https://e-commerce-api.academlo.tech/api/v1/products/categories')
       .then((res) => setCategoryList(res.data.data.categories))
   }, [])
-
+  console.log(img)
   return (
     <div>
       <Row>
@@ -66,20 +66,48 @@ const Home = () => {
           <Row xs={1} md={2} className='g-4'>
             {products?.map((product) => (
               <Col key={product.id}>
+                <div
+                  className='img-container'
+                  onMouseOver={() => setImg(product.id)}
+                  onMouseLeave={() => setImg(null)}
+                >
+                  <Card.Img
+                    className={`${img === product.id ? 'opacity' : ''}`}
+                    style={{
+                      width: 300,
+                      height: 300,
+                      position: 'absolute',
+                      display: 'block',
+                      objectFit: 'contain',
+                      transition: 'opacity',
+                      transitionDuration: '0.8s',
+                    }}
+                    variant='top'
+                    src={product.productImgs[0]}
+                    // style={{ objectFit: 'cover', height: 200 }}
+                  />
+                  <Card.Img
+                    className={`${img !== product.id ? 'opacity' : ''}`}
+                    style={{
+                      width: 300,
+                      height: 300,
+                      position: 'absolute',
+                      display: 'block',
+                      objectFit: 'contain',
+                      transition: 'opacity',
+                      transitionDuration: '0.8s',
+                    }}
+                    variant='top'
+                    src={product.productImgs[1]}
+                    // style={{ objectFit: 'cover', height: 200 }}
+                  />
+                </div>
+
                 <Card>
                   <Link
                     to={`/products/${product.id}`}
                     style={{ textDecoration: 'none' }}
                   >
-                    <Card.Img
-                      style={{
-                        width: 300,
-                        height: 300,
-                      }}
-                      variant='top'
-                      src={product.productImgs[0]}
-                      // style={{ objectFit: 'cover', height: 200 }}
-                    />
                     <Card.Body>
                       <Card.Title>
                         <p>{product.title}</p>
