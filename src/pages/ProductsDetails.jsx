@@ -23,7 +23,7 @@ const ProductsDetails = () => {
       <h1>{produ?.title}</h1>
       <Row>
         <Col lg={9}>
-          <img src={produ?.productImgs[0]} alt='foto' />
+          <img src={produ?.productImgs[0]} alt='foto' className='img-fluid' />
           <p>{produ?.description}</p>
         </Col>
         <Col lg={3}>

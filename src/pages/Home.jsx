@@ -86,9 +86,11 @@ const Home = () => {
                       </Card.Title>
                       <Card.Text>Price</Card.Text>
                       <Card.Text>$ {product.price}</Card.Text>
-                      <i className='fa-solid fa-cart-shopping flex'></i>
                     </Card.Body>
                   </Link>
+                  <Card>
+                    <i className='fa-solid fa-cart-shopping flex cart'></i>
+                  </Card>
                 </Card>
               </Col>
             ))}
