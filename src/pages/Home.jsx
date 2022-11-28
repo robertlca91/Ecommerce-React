@@ -66,42 +66,47 @@ const Home = () => {
           <Row xs={1} md={2} className='g-4'>
             {products?.map((product) => (
               <Col key={product.id}>
-                <div
-                  className='img-container'
-                  onMouseOver={() => setImg(product.id)}
-                  onMouseLeave={() => setImg(null)}
+                <Link
+                  to={`/products/${product.id}`}
+                  style={{ textDecoration: 'none' }}
                 >
-                  <Card.Img
-                    className={`${img === product.id ? 'opacity' : ''}`}
-                    style={{
-                      width: 300,
-                      height: 300,
-                      position: 'absolute',
-                      display: 'block',
-                      objectFit: 'contain',
-                      transition: 'opacity',
-                      transitionDuration: '0.8s',
-                    }}
-                    variant='top'
-                    src={product.productImgs[0]}
-                    // style={{ objectFit: 'cover', height: 200 }}
-                  />
-                  <Card.Img
-                    className={`${img !== product.id ? 'opacity' : ''}`}
-                    style={{
-                      width: 300,
-                      height: 300,
-                      position: 'absolute',
-                      display: 'block',
-                      objectFit: 'contain',
-                      transition: 'opacity',
-                      transitionDuration: '0.8s',
-                    }}
-                    variant='top'
-                    src={product.productImgs[1]}
-                    // style={{ objectFit: 'cover', height: 200 }}
-                  />
-                </div>
+                  <div
+                    className='img-container'
+                    onMouseOver={() => setImg(product.id)}
+                    onMouseLeave={() => setImg(null)}
+                  >
+                    <Card.Img
+                      className={`${img === product.id ? 'opacity' : ''}`}
+                      style={{
+                        width: 300,
+                        height: 300,
+                        position: 'absolute',
+                        display: 'block',
+                        objectFit: 'contain',
+                        transition: 'opacity',
+                        transitionDuration: '0.8s',
+                      }}
+                      variant='top'
+                      src={product.productImgs[0]}
+                      // style={{ objectFit: 'cover', height: 200 }}
+                    />
+                    <Card.Img
+                      className={`${img !== product.id ? 'opacity' : ''}`}
+                      style={{
+                        width: 300,
+                        height: 300,
+                        position: 'absolute',
+                        display: 'block',
+                        objectFit: 'contain',
+                        transition: 'opacity',
+                        transitionDuration: '0.8s',
+                      }}
+                      variant='top'
+                      src={product.productImgs[1]}
+                      // style={{ objectFit: 'cover', height: 200 }}
+                    />
+                  </div>
+                </Link>
 
                 <Card>
                   <Link
