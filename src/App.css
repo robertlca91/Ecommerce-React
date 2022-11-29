@@ -66,6 +66,7 @@
   padding: 0.5rem;
   border-radius: 100%;
   position: center;
+  cursor: pointer;
 }
 .img-container {
   position: relative;
@@ -78,4 +79,15 @@
 }
 .opacity {
   opacity: 0;
+}
+
+.container-general {
+  background: rgba(255, 255, 255, 0.669);
+  border-radius: 10px 10px 0 0;
+}
+.contenido {
+  background: rgba(255, 255, 255, 0.483);
+  border: none;
+  border-radius: 0 0 10px 10px;
+  font-size: 20px;
 }

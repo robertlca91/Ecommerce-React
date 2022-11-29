@@ -50,7 +50,7 @@ const Home = () => {
           {/* todo esto es del estado de category */}
           <InputGroup className='mb-3'>
             <Form.Control
-              placeholder="Recipient's username"
+              placeholder='look for your articles'
               aria-label="Recipient's username"
               aria-describedby='basic-addon2'
               value={inputSearch}
@@ -71,7 +71,7 @@ const Home = () => {
                   style={{ textDecoration: 'none' }}
                 >
                   <div
-                    className='img-container'
+                    className='img-container container-general'
                     onMouseOver={() => setImg(product.id)}
                     onMouseLeave={() => setImg(null)}
                   >
@@ -113,7 +113,7 @@ const Home = () => {
                     to={`/products/${product.id}`}
                     style={{ textDecoration: 'none' }}
                   >
-                    <Card.Body>
+                    <Card.Body className='contenido'>
                       <Card.Title>
                         <p>{product.title}</p>
                       </Card.Title>
