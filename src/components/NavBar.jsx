@@ -16,7 +16,7 @@ const NavBar = () => {
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>
             <Nav.Link as={Link} to='/login'>
-              <i class='fa-regular fa-user'></i>
+              <i className='fa-regular fa-user'></i>
             </Nav.Link>
 
             <Nav.Link as={Link} to='/purchases'>
