@@ -1,5 +1,5 @@
 .spinner-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(9, 52, 57, 0.3);
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +17,7 @@
 }
 .lds-ripple div {
   position: absolute;
-  border: 4px solid #fff;
+  border: 4px solid rgb(245, 236, 236);
   opacity: 1;
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -82,12 +82,25 @@
 }
 
 .container-general {
-  background: rgba(255, 255, 255, 0.669);
+  background: #fff;
   border-radius: 10px 10px 0 0;
 }
 .contenido {
-  background: rgba(255, 255, 255, 0.483);
+  background: #fff;
   border: none;
   border-radius: 0 0 10px 10px;
   font-size: 20px;
+}
+.product-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow-x: scroll;
+  width: 600px;
+  border-radius: 20px;
+}
+.ecommerce {
+  box-decoration-break: slice;
+  /* background: rgba(204, 78, 78, 0.532); */
+  text-decoration-color: rgba(43, 226, 98, 0.765);
 }

@@ -19,18 +19,22 @@ const ProductsDetails = () => {
   ) // este es como un map // crecar bien este codigo // el filter devuelve todas las coencidencias
   console.log(relativeProduct)
   return (
-    <div>
-      <h1>{produ?.title}</h1>
+    <div className='ProductDetail'>
+      <h1 className='text-info'>{produ?.title}</h1>
       <Row>
         <Col lg={9}>
-          <img src={produ?.productImgs[0]} alt='foto' className='img-fluid' />
-          <p>{produ?.description}</p>
+          <div className='product-container'>
+            <img src={produ?.productImgs[0]} alt='foto' className='img-fluid' />
+            <img src={produ?.productImgs[1]} alt='foto' className='img-fluid' />
+            <img src={produ?.productImgs[2]} alt='foto' className='img-fluid' />
+          </div>
+          <p className='text-info'>{produ?.description}</p>
         </Col>
         <Col lg={3}>
-          <h3>product relative</h3>
+          <h3 className='text-info'>product relative</h3>
           <ListGroup>
             {relativeProduct.map((relative) => (
-              <ListGroup.Item key={relative.id}>
+              <ListGroup.Item key={relative.id} className='group'>
                 <Link to={`/products/${relative.id}`}>
                   <div>
                     <img

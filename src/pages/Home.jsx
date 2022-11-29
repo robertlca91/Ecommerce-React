@@ -46,7 +46,7 @@ const Home = () => {
           </ListGroup>
         </Col>
         <Col lg={9}>
-          <h1>Componentes del Home</h1>
+          <h1 className='text-info'>Componentes del Home</h1>
           {/* todo esto es del estado de category */}
           <InputGroup className='mb-3'>
             <Form.Control
@@ -115,10 +115,12 @@ const Home = () => {
                   >
                     <Card.Body className='contenido'>
                       <Card.Title>
-                        <p>{product.title}</p>
+                        <p className='text-info'>{product.title}</p>
                       </Card.Title>
-                      <Card.Text>Price</Card.Text>
-                      <Card.Text>$ {product.price}</Card.Text>
+                      <Card.Text className='text-info'>Price</Card.Text>
+                      <Card.Text className='text-info'>
+                        $ {product.price}
+                      </Card.Text>
                     </Card.Body>
                   </Link>
                   <Card>
