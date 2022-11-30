@@ -24,7 +24,7 @@ const Home = () => {
   }, [])
   console.log(img)
   return (
-    <div>
+    <div className='container-1'>
       <Row>
         <Col lg={3}>
           <ListGroup>
@@ -65,7 +65,7 @@ const Home = () => {
           </InputGroup>
           <Row xs={1} md={2} className='g-4'>
             {products?.map((product) => (
-              <Col key={product.id}>
+              <Col key={product.id} className='product-1'>
                 <Link
                   to={`/products/${product.id}`}
                   style={{ textDecoration: 'none' }}
@@ -88,7 +88,7 @@ const Home = () => {
                       }}
                       variant='top'
                       src={product.productImgs[0]}
-                      // style={{ objectFit: 'cover', height: 200 }}
+                    // style={{ objectFit: 'cover', height: 200 }}
                     />
                     <Card.Img
                       className={`${img !== product.id ? 'opacity' : ''}`}
@@ -103,7 +103,7 @@ const Home = () => {
                       }}
                       variant='top'
                       src={product.productImgs[1]}
-                      // style={{ objectFit: 'cover', height: 200 }}
+                    // style={{ objectFit: 'cover', height: 200 }}
                     />
                   </div>
                 </Link>
