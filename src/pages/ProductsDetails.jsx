@@ -23,10 +23,25 @@ const ProductsDetails = () => {
       <h1 className='text-info'>{produ?.title}</h1>
       <Row>
         <Col lg={9}>
-          <div className='product-container'>
-            <img src={produ?.productImgs[0]} alt='foto' className='img-fluid' />
-            <img src={produ?.productImgs[1]} alt='foto' className='img-fluid' />
-            <img src={produ?.productImgs[2]} alt='foto' className='img-fluid' />
+          <div className='product-container py-10 my-5 '>
+            <img
+              src={produ?.productImgs[0]}
+              alt='foto'
+              className='img-fluid'
+              style={{ height: 500 }}
+            />
+            <img
+              src={produ?.productImgs[1]}
+              alt='foto'
+              className='img-fluid p-10'
+              style={{ height: 500 }}
+            />
+            <img
+              src={produ?.productImgs[2]}
+              alt='foto'
+              className='img-fluid'
+              style={{ height: 500 }}
+            />
           </div>
           <p className='text-info'>{produ?.description}</p>
         </Col>
@@ -41,6 +56,7 @@ const ProductsDetails = () => {
                       src={relative.productImgs[0]}
                       alt='img'
                       style={{ width: 100 }}
+                      className='img-fluid'
                     />
                   </div>
                   {relative.title}
