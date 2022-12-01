@@ -84,7 +84,6 @@
   width: 100%;
   height: 300px;
   overflow: hidden;
-
 }
 
 .opacity {
@@ -103,7 +102,6 @@
   font-size: 20px;
 }
 
-
 .ecommerce {
   box-decoration-break: slice;
   /* background: rgba(204, 78, 78, 0.532); */
@@ -113,7 +111,6 @@
 body.darkmode {
   background-color: white;
   color: rgb(91 192 223);
-
 }
 
 .d-block {
@@ -125,7 +122,6 @@ body.darkmode {
 .card {
   border-top: 2px solid black !important;
   border: none !important;
-  ;
 }
 
 .container-link {
@@ -142,7 +138,6 @@ body.darkmode {
 
 .flex0 {
   flex: 0.5;
-
 }
 
 .flex2 {
@@ -150,7 +145,6 @@ body.darkmode {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .purchase-cont {
@@ -169,3 +163,4 @@ body.darkmode {
   margin-bottom: 15px;
   color: rgb(91 192 223);
 }
+

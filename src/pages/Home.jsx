@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { Button, Card, Col, InputGroup, ListGroup, Row } from 'react-bootstrap'
+import { createCartThunk } from '../store/slices/cart.slice'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -22,7 +23,14 @@ const Home = () => {
       .get('https://e-commerce-api.academlo.tech/api/v1/products/categories')
       .then((res) => setCategoryList(res.data.data.categories))
   }, [])
-  console.log(img)
+  const addCart = (id) => {
+    const product = {
+      id: id,
+      quantity: 1,
+    }
+    dispatch(createCartThunk(product))
+  }
+
   return (
     <div className='container-1'>
       <Row>
@@ -65,7 +73,7 @@ const Home = () => {
               Search
             </Button>
           </InputGroup>
-          <Row xs={1} md={2} className='g-4'>
+          <Row xs={1} md={3} className='g-4'>
             {products?.map((product) => (
               <Col key={product.id} className='product-1'>
                 <Link
@@ -90,7 +98,7 @@ const Home = () => {
                       }}
                       variant='top'
                       src={product.productImgs[0]}
-                    // style={{ objectFit: 'cover', height: 200 }}
+                      // style={{ objectFit: 'cover', height: 200 }}
                     />
                     <Card.Img
                       className={`${img !== product.id ? 'opacity' : ''}`}
@@ -105,7 +113,7 @@ const Home = () => {
                       }}
                       variant='top'
                       src={product.productImgs[1]}
-                    // style={{ objectFit: 'cover', height: 200 }}
+                      // style={{ objectFit: 'cover', height: 200 }}
                     />
                   </div>
                 </Link>
@@ -125,7 +133,7 @@ const Home = () => {
                       </Card.Text>
                     </Card.Body>
                   </Link>
-                  <Card>
+                  <Card onClick={() => addCart(product.id)}>
                     <i className='fa-solid fa-cart-shopping flex cart'></i>
                   </Card>
                 </Card>

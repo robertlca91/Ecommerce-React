@@ -7,13 +7,12 @@ import { Link } from 'react-router-dom'
 import Cart from './Cart'
 
 const NavBar = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
     <>
-
       <Navbar bg='light' expand='lg'>
         <Container>
           <Navbar.Brand as={Link} to='/' className='fs-4 text-info ecommerce'>

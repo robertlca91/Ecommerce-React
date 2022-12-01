@@ -52,13 +52,15 @@ const Login = () => {
           {...register('password')}
         />
       </Form.Group>
-      <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-        <Form.Check type='checkbox' label='Check me out' />
-      </Form.Group>
+
       <Button variant='primary' type='submit'>
         Submit
       </Button>
-      <Link to={'/newusers'}>create users</Link>
+      <Button>
+        <Link to='/newusers' style={{ textDecoration: 'none' }}>
+          create users
+        </Link>
+      </Button>
     </Form>
   )
 }
