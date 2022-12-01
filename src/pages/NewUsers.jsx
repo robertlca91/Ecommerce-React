@@ -11,7 +11,7 @@ const NewUsers = () => {
   const submit = (newusers) => {
     axios
       .post(`https://e-commerce-api.academlo.tech/api/v1/users`, newusers)
-      .then((res) => navigate('/'))
+      .then((res) => navigate('/login'))
     console.log(newusers)
   }
   return (
