@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import getConfig from '../../utils/getConfig';
-import { setIsloading } from './isLoading.slice';
+import { createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
+import getConfig from '../../utils/getConfig'
+import { setIsloading } from './isLoading.slice'
 
 export const cartSlice = createSlice({
   name: 'cart',
@@ -9,31 +9,52 @@ export const cartSlice = createSlice({
   reducers: {
     setCart: (state, action) => {
       return action.payload
-    }
-  }
+    },
+  },
 })
 
 export const getCartThunk = () => (dispatch) => {
-  dispatch(setIsloading(true));
-  return axios.get('https://e-commerce-api.academlo.tech/api/v1/cart', getConfig())
+  dispatch(setIsloading(true))
+  return axios
+    .get('https://e-commerce-api.academlo.tech/api/v1/cart', getConfig())
     .then((res) => dispatch(setCart(res.data.data.cart.products)))
-    .finally(() => dispatch(setIsloading(false)));
+    .finally(() => dispatch(setIsloading(false)))
 }
 
 export const createCartThunk = (productsInCart) => (dispatch) => {
-  dispatch(setIsloading(true));
-  return axios.post('https://e-commerce-api.academlo.tech/api/v1/cart', productsInCart, getConfig())
+  dispatch(setIsloading(true))
+  return axios
+    .post(
+      'https://e-commerce-api.academlo.tech/api/v1/cart',
+      productsInCart,
+      getConfig()
+    )
     .then((res) => dispatch(getCartThunk()))
-    .finally(() => dispatch(setIsloading(false)));
+    .finally(() => dispatch(setIsloading(false)))
 }
 
 export const checkoutCartThunk = () => (dispatch) => {
-  dispatch(setIsloading(true));
-  return axios.post('https://e-commerce-api.academlo.tech/api/v1/purchases', {}, getConfig())
+  dispatch(setIsloading(true))
+  return axios
+    .post(
+      'https://e-commerce-api.academlo.tech/api/v1/purchases',
+      {},
+      getConfig()
+    )
     .then(() => dispatch(setCart([])))
-    .finally(() => dispatch(setIsloading(false)));
+    .finally(() => dispatch(setIsloading(false)))
+}
+export const deleteThunkId = (id) => (dispatch) => {
+  dispatch(setIsloading(true))
+  return axios
+    .delete(
+      `https://e-commerce-api.academlo.tech/api/v1/cart/${id}`,
+      getConfig()
+    )
+    .then((res) => dispatch(getCartThunk()))
+    .finally(() => dispatch(setIsloading(false)))
 }
 
-export const { setCart } = cartSlice.actions;
+export const { setCart } = cartSlice.actions
 
-export default cartSlice.reducer;
+export default cartSlice.reducer
