@@ -11,16 +11,27 @@ const Purchases = () => {
   }, [])
   console.log(purchases)
   return (
-    <div>
+    <div className=''>
       {purchases.map((purchase) => (
-        <div key={purchase.id}>
-          <p>
-            <b>{purchase.createdAt}</b>
-          </p>
+        <div key={purchase.id} className='purchase-cont'>
+          <div className='date'>
+            <p>
+              {purchase.createdAt}
+            </p>
+          </div>
           {purchase.cart.products.map((prod) => (
             <div key={prod.id}>
-              <Link to={`/products/${prod.id}`}>{prod.title}</Link>
-              <p>{prod.price}</p>
+              <Link
+                to={`/products/${prod.id}`}
+                className='container-link text-info'
+              >
+                <p className='flex1'>{prod.title}</p>
+                <div className='flex0 flex2'>
+                  <p >{prod.productsInCart.quantity}</p>
+                </div>
+
+                <p className='flex0'>{prod.price}</p>
+              </Link>
             </div>
           ))}
         </div>
@@ -29,3 +40,5 @@ const Purchases = () => {
   )
 }
 export default Purchases
+
+// prod.productsInCart.quantity

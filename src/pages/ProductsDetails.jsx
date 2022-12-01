@@ -32,7 +32,8 @@ const ProductsDetails = () => {
     dispatch(createCartThunk(productsInCart))
   }
 
-
+  console.log(productList)
+  // products.
 
   return (
     <div className='ProductDetail'>
@@ -70,28 +71,6 @@ const ProductsDetails = () => {
 
             </Carousel.Item>
           </Carousel>
-          {/* <div className='product-container py-10 my-5 '>
-
-
-            <img
-              src={produ?.productImgs[0]}
-              alt='foto'
-              className='img-fluid'
-              style={{ height: 500 }}
-            />
-            <img
-              src={produ?.productImgs[1]}
-              alt='foto'
-              className='img-fluid p-10'
-              style={{ height: 500 }}
-            />
-            <img
-              src={produ?.productImgs[2]}
-              alt='foto'
-              className='img-fluid'
-              style={{ height: 500 }}
-            />
-          </div> */}
           <p className='text-info'>{produ?.description}</p>
         </Col>
         <Col lg={3}>
@@ -113,14 +92,6 @@ const ProductsDetails = () => {
               </ListGroup.Item>
             ))}
           </ListGroup>
-          {/* <h3>product relative</h3> */}
-          {/* {relativeProduct.map((relative) => (
-            <li>
-              <Link key={relative.id} to={`/products/${relative.id}`}>
-                {relative.title}
-              </Link>
-            </li>
-          ))} */}
         </Col>
       </Row>
 
