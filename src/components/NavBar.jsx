@@ -14,10 +14,10 @@ const NavBar = () => {
   return (
     <>
 
-      <Navbar bg='light' expand='lg'>
+      <Navbar bg='warning -10%,' expand='lg' variant="dark">
         <Container>
           <Navbar.Brand as={Link} to='/' className='fs-4 text-info ecommerce'>
-            Ecommerce
+            E-commerce
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <div>
@@ -31,7 +31,7 @@ const NavBar = () => {
                   Purchases
                 </Nav.Link>
                 <Nav.Link onClick={handleShow}>
-                  <i className='fa-solid fa-cart-shopping fs-2 text-info'></i>
+                  <i className='fa-solid fa-cart-shopping fs-2 text-info' ></i>
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
