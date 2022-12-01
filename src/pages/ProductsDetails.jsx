@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Carousel, Col, ListGroup, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
+import { createCartThunk } from '../store/slices/cart.slice'
 import { getProductsThunk } from '../store/slices/products.slice'
 
 const ProductsDetails = () => {
@@ -28,6 +29,7 @@ const ProductsDetails = () => {
       quantity: rate
     }
     console.log(productsInCart);
+    dispatch(createCartThunk(productsInCart))
   }
 
 
