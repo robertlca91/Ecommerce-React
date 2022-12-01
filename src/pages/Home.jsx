@@ -46,10 +46,11 @@ const Home = () => {
           </ListGroup>
         </Col>
         <Col lg={9}>
-          <h1 className='text-info'>Componentes del Home</h1>
+          <h1 className='text-info my-3'>Home Components</h1>
           {/* todo esto es del estado de category */}
           <InputGroup className='mb-3'>
             <Form.Control
+              className='my-3'
               placeholder='look for your articles'
               aria-label="Recipient's username"
               aria-describedby='basic-addon2'
@@ -57,6 +58,7 @@ const Home = () => {
               onChange={(e) => setInputSearch(e.target.value)}
             />
             <Button
+              className='my-3'
               variant='outline-secondary'
               onClick={() => dispatch(filterHeadlineThunk(inputSearch))}
             >

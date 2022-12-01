@@ -19,7 +19,7 @@ const Cart = ({ show, handleClose }) => {
   return (
     <Offcanvas show={show} onHide={handleClose}>
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        <Offcanvas.Title className=''>Shopping Cart</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         {cart.map((product) => (
