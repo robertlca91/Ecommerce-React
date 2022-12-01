@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import NewUsers from './NewUsers'
 
 const Login = () => {
   const { register, handleSubmit } = useForm()
@@ -57,6 +58,7 @@ const Login = () => {
       <Button variant='primary' type='submit'>
         Submit
       </Button>
+      <Link to={'/newusers'}>create users</Link>
     </Form>
   )
 }
