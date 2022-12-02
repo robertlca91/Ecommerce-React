@@ -104,8 +104,9 @@
 
 .ecommerce {
   box-decoration-break: slice;
-  /* background: rgba(204, 78, 78, 0.532); */
-  text-decoration-color: rgba(43, 226, 98, 0.765);
+  /*background: rgba(204, 78, 78, 0.532);
+  */text-decoration-color: rgba(43, 226, 98, 0.765);
+  -moz-text-decoration-color: rgba(43, 226, 98, 0.765);
 }
 
 body.darkmode {
@@ -161,6 +162,11 @@ body.darkmode {
 .date {
   border-bottom: solid 2px black;
   margin-bottom: 15px;
+<<<<<<< HEAD
+  color: rgb(222, 235, 226);
+}
+=======
   color: rgb(91 192 223);
 }
 
+>>>>>>> 593ffc23e6084b52c9a7ed1a1894a19dcf71c289
