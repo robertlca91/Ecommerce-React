@@ -31,6 +31,7 @@ export const createCartThunk = (productsInCart) => (dispatch) => {
     )
     .then((res) => dispatch(getCartThunk()))
     .finally(() => dispatch(setIsloading(false)))
+    .catch((error) => console.log(error.response?.data));
 }
 
 export const checkoutCartThunk = () => (dispatch) => {
